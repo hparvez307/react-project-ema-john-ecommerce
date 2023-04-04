@@ -6,6 +6,9 @@
     align-items: center;
     padding-left: 100px;
     padding-right: 100px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
 }
 
 .menu{
@@ -19,8 +22,10 @@
     
 }
 
-.menu a:hover{
-    color: blue;
-    font-size: 20px;
-    
+.active{
+    background-color: rgb(109, 92, 92);
+    border-radius: 3px;
+  
+    padding-left: 5px;
+    padding-right: 5px;
 }
