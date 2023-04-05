@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
 import './Order.css';
-import { useLoaderData, useSearchParams } from 'react-router-dom';
+import { useLoaderData, useNavigate, useSearchParams } from 'react-router-dom';
 import ReviewItem from '../reviewItem/ReviewItem';
-import { removeFromDb } from '../../utilities/fakedb';
+import { deleteShoppingCart, removeFromDb } from '../../utilities/fakedb';
 
 const Orders = () => {
     const savedCart = useLoaderData();
@@ -16,6 +16,16 @@ const Orders = () => {
 
     }
 
+    const handleClearCart = () => {
+        setCart([]);
+        deleteShoppingCart();
+    }
+
+    const navigate = useNavigate();
+
+    const handle = () => {
+        navigate('/checkout');
+    }
  
     return (
         <div className='shop-container'>
@@ -30,7 +40,10 @@ const Orders = () => {
             </div>
 
             <div className="cart-container">
-               <Cart cart={cart}></Cart>
+               <Cart handle={handle}  handleClearCart={handleClearCart} cart={cart}>
+                
+               <div>Proceed Checkout</div>
+               </Cart>
             </div>
         </div>
     );

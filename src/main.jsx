@@ -12,6 +12,7 @@ import Orders from './component/orders/Orders';
 import Inventory from './component/inventory/Inventory';
 import Login from './component/Login/Login';
 import cartProductsLoader from './loaders/cartProductsLoader';
+import Checkout from './component/checkout/Checkout';
 
 
 const router = createBrowserRouter([
@@ -35,6 +36,14 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>
+      },
+      {
+        path: '/checkout',
+        element: <Checkout></Checkout>
+      },
+      {
+        path: '*',
+        element: <h1>404 Not Found</h1>
       }
     ]
   }
