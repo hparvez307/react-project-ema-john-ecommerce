@@ -15,3 +15,12 @@
 .cart-container{
     text-align: center;
 }
+
+.pagination{
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.pagination .selected{
+   background-color: #FF9900;
+}
